@@ -11,11 +11,8 @@
 |
 */
 
-$router->get('/', function () use ($router) {
-    return $router->app->version();
-});
+use Laravel\Lumen\Routing\Router;
 
-$router->group(['prefix' => 'api'], static function () use ($router) {
-    $router->get('/status', ['uses' => 'StatusController@index']);
+/** @var Router $router */
+$router->get('/{id', 'GetTrainerController');
 
-});
