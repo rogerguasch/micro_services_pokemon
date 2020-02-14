@@ -2,7 +2,10 @@
 
 namespace App\Providers;
 
+use CommandBus;
 use Illuminate\Support\ServiceProvider;
+use League\Tactician\CommandBus as TacticianCommandBus;
+use QueryBus;
 
 
 class BusServiceProvider extends ServiceProvider
@@ -14,5 +17,7 @@ class BusServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->app->bind(CommandBus::class, TacticianCommandBus::class);
+        $this->app->bind(QueryBus::class, TacticianCommandBus::class);
     }
 }

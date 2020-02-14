@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use League\Tactician\CommandBus;
+
+use QueryBus;
 use StatusNotOkException;
 use StatusQuery;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -12,7 +13,7 @@ class StatusController extends Controller
 {
     private $queryBus;
 
-    public function __construct(CommandBus $queryBus)
+    public function __construct(QueryBus $queryBus)
     {
         $this->queryBus = $queryBus;
     }
