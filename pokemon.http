@@ -1,0 +1,8 @@
+GET http://localhost:8000
+Accept: application/json
+
+###
+GET http://localhost:8000/api/status
+Accept: application/json
+
+###

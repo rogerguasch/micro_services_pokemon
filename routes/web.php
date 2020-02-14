@@ -14,3 +14,8 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+
+$router->group(['prefix' => 'api'], static function () use ($router) {
+    $router->get('/status', ['uses' => 'StatusController@index']);
+
+});
