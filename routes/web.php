@@ -14,5 +14,5 @@
 use Laravel\Lumen\Routing\Router;
 
 /** @var Router $router */
-$router->get('/{id', 'GetTrainerController');
+$router->get('/{id}', 'GetTrainerController');
 

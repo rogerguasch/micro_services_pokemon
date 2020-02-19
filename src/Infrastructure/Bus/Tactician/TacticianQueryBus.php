@@ -9,7 +9,7 @@ use Pokemon\Domain\Bus\QueryBus;
 
 class TacticianQueryBus extends CommandBus implements QueryBus
 {
-    public function handle($command): JsonSerializable
+    public function handle($command)
     {
         return parent::handle($command);
     }

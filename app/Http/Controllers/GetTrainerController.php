@@ -7,9 +7,9 @@ namespace App\Http\Controllers;
 
 
 use Exception;
-use GetTrainerById;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Pokemon\Application\Query\GetTrainerById;
 use Pokemon\Domain\Bus\QueryBus;
 
 class GetTrainerController

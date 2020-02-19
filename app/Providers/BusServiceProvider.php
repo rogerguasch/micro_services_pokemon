@@ -11,8 +11,9 @@ use League\Tactician\Handler\Locator\CallableLocator;
 use League\Tactician\Handler\MethodNameInflector\InvokeInflector;
 use Pokemon\Domain\Bus\CommandBus;
 use Pokemon\Domain\Bus\QueryBus;
-use TacticianCommandBus;
-use TacticianQueryBus;
+use Pokemon\Infrastructure\Bus\Tactician\TacticianCommandBus;
+use Pokemon\Infrastructure\Bus\Tactician\TacticianQueryBus;
+
 
 class BusServiceProvider extends ServiceProvider
 {
