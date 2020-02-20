@@ -11,8 +11,10 @@ use League\Tactician\Handler\Locator\CallableLocator;
 use League\Tactician\Handler\MethodNameInflector\InvokeInflector;
 use Pokemon\Domain\Bus\CommandBus;
 use Pokemon\Domain\Bus\QueryBus;
+use Pokemon\Domain\EventBus\ListenerProvider;
 use Pokemon\Infrastructure\Bus\Tactician\TacticianCommandBus;
 use Pokemon\Infrastructure\Bus\Tactician\TacticianQueryBus;
+use Psr\EventDispatcher\ListenerProviderInterface;
 
 
 class BusServiceProvider extends ServiceProvider
@@ -60,6 +62,23 @@ class BusServiceProvider extends ServiceProvider
         $this->app->bind(
             QueryBus::class,
             TacticianQueryBus::class
+        );
+
+        $this->app->singleton(
+            ListenerProvider::class,
+            fn($app) => new ListenerProvider()
+        );
+
+//        $this->app->singleton(
+//            ListenerProvider::class,
+//            static function (Application $app) {
+//                return new ListenerProvider();
+//            }
+//        );
+
+        $this->app->bind(
+            ListenerProviderInterface::class,
+            ListenerProvider::class
         );
     }
 }
